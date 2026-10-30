@@ -45,8 +45,27 @@ def test_item_mais_barato(pedido_grande):
 
 # Requisito 1 — contar_frete_gratis(pedidos) -> int
 # Escreva os testes ANTES de implementar a função
+def test_contar_frete_gratis_lista_vazia():
+    assert contar_frete_gratis([]) == 0
 
 
+def test_contar_frete_gratis_todos(pedido_grande, pedido_com_frete):
+    pedidos = [pedido_grande, pedido_com_frete]
+
+    assert contar_frete_gratis(pedidos) == 2
+
+
+def test_contar_frete_gratis_nenhum(pedido_pequeno):
+    outro_pedido_pequeno = Pedido("Carlos", [Item("Suco", 10.0, 2)])
+    pedidos = [pedido_pequeno, outro_pedido_pequeno]
+
+    assert contar_frete_gratis(pedidos) == 0
+
+
+def test_contar_frete_gratis_lista_mista(pedido_grande, pedido_pequeno):
+    pedidos = [pedido_grande, pedido_pequeno]
+
+    assert contar_frete_gratis(pedidos) == 1
 
 # Requisito 2 — situacao(unidades_indisponiveis) -> str
 # Escreva os testes ANTES de implementar o método

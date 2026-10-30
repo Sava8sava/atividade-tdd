@@ -22,6 +22,11 @@ def test_exemplo_quantidade_total(pedido_pequeno):
 def test_frete_apartir_de_50_reais(pedido_com_frete):
     assert pedido_com_frete.tem_frete_gratis() == True
 
+#BUG 2, O subtotal não está multiplicando o preço pela quantidade de cada item
+def test_subtotal_considera_quantidade(pedido_grande):
+    # (22.0 * 2) + (7.0 * 2) + (15.0 * 1) = 73.0
+    assert pedido_grande.subtotal() == 73.0
+
 
 
 # =============================================================

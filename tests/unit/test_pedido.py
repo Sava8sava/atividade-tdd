@@ -18,6 +18,10 @@ def test_exemplo_quantidade_total(pedido_pequeno):
 # no código original. Não altere src/pedido/pedido.py ainda.
 # =============================================================
 
+#BUG 1, as regra dizem que o frete é valido para valores a partir de 50 reais mas o cliente só ganha quando é maior que 50
+def test_frete_apartir_de_50_reais(pedido_com_frete):
+    assert pedido_com_frete.tem_frete_gratis() == True
+
 
 
 # =============================================================

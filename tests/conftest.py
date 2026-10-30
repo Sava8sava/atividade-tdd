@@ -21,3 +21,13 @@ def pedido_grande():
             Item("Batata frita", 15.0, 1),
         ],
     )
+
+@pytest.fixture
+def pedido_com_frete():
+    return Pedido(
+        cliente = "Victor",
+        itens=[
+            Item("X-Cupim",50.0,1),
+        ], 
+    )
+

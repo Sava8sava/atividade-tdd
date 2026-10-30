@@ -27,6 +27,11 @@ def test_subtotal_considera_quantidade(pedido_grande):
     # (22.0 * 2) + (7.0 * 2) + (15.0 * 1) = 73.0
     assert pedido_grande.subtotal() == 73.0
 
+#BUG 3, O desconto esta sendo adicionado no preço final e não subtraida 
+def test_exemplo_de_desconto(pedido_grande):
+    # 2 X-burgers + 2 refrigerantes + 1 batata frita = 73
+    assert pedido_grande.total_com_desconto(percentual=50.0) == 36.5
+
 
 
 # =============================================================

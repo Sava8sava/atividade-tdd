@@ -1,6 +1,6 @@
 import pytest
 from unittest.mock import MagicMock
-from pedido.pedido import Item, Pedido
+from pedido.pedido import Item, Pedido, contar_frete_gratis
 
 
 # =============================================================

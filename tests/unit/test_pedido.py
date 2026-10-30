@@ -32,6 +32,10 @@ def test_exemplo_de_desconto(pedido_grande):
     # 2 X-burgers + 2 refrigerantes + 1 batata frita = 73
     assert pedido_grande.total_com_desconto(percentual=50.0) == 36.5
 
+#BUG 4, O item mais barato está retornando o item mais caro
+def test_item_mais_barato(pedido_grande):
+    # devia retornar refrigerante mas esta retornado X-burger
+    assert pedido_grande.item_mais_barato().nome == "Refrigerante"
 
 
 # =============================================================
